@@ -1,0 +1,20 @@
+# In profiles.yml
+
+# This top-level key MUST match the 'name:' in your dbt_project.yml
+dbt_project_venv:
+  target: dev
+  outputs:
+    dev:
+      type: databricks
+      # These values will be filled in automatically by the Databricks job
+      host: "{{ env_var('DBT_DATABRICKS_HOST_NAME') }}"
+      http_path: "{{ env_var('DBT_DATABRICKS_HTTP_PATH') }}"
+      token: "{{ env_var('DBT_DATABRICKS_TOKEN') }}"
+
+      # This is the CRITICAL line that fixes your error.
+      # It forces dbt to connect to your Unity Catalog.
+      catalog: "workspace"
+
+      # This is the schema where your tables will be built.
+      schema: "dbt_models"
+      threads: 4
