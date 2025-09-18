@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: nyc_transport_data
+    database: workspace
+    schema: default
+    tables:
+      - name: bronze_weather
+      - name: bronze_citibike_trips
+      - name: bronze_taxi_trips
