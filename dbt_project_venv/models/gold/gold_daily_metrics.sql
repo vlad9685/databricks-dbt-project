@@ -1,5 +1,5 @@
--- This is our final Gold model.
--- It aggregates the trip data by day and joins it with the daily weather data.
+-- Final Gold model.
+-- Aggregates the trip data by day and joins it with the daily weather data.
 
 WITH citibike_daily AS (
     SELECT
@@ -21,7 +21,7 @@ taxi_daily AS (
     GROUP BY 1
 )
 
--- Final SELECT to join our daily aggregates with the weather data
+-- Final SELECT to join the daily aggregates with the weather data
 SELECT
     weather.weather_date,
     weather.temp_max_c,

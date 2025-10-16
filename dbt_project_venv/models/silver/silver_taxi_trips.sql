@@ -10,4 +10,4 @@ SELECT
     tip_amount,
     total_amount
 FROM {{ source('nyc_transport_data', 'bronze_taxi_trips') }}
-WHERE trip_distance > 0 AND fare_amount > 0 -- Add a basic data quality filter
+WHERE trip_distance > 0 AND fare_amount > 0 -- Basic data quality filter
