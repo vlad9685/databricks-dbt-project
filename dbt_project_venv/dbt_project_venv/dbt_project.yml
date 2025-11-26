@@ -1,0 +1,22 @@
+
+name: 'dbt_project_venv'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_project_venv'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_project_venv:
+    example:
+      +materialized: view
